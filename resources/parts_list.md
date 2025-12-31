@@ -31,8 +31,7 @@ List of parts included with various kits that have been purchased
 
 - 1 Breadboard (High quality BusBoard Prototype Systems BB830)
 - 1 140-piece jumper wire kit
-- 3
-- LM-555 Timer ICs
+- 3 LM-555 Timer ICs
 - 1 74LS04 Hex inverter
 - 1 74LS08 Quad 2-input AND gate
 - 1 74LS32 Quad 2-input OR gate
@@ -41,8 +40,7 @@ List of parts included with various kits that have been purchased
 - 1 Momentary tact switch
 - 1 SPST slide switch
 - 1 1MΩ potentiometer
-- 5
-- 220Ω resistors
+- 5 220Ω resistors
 - 5 1KΩ resistors
 - 5 1MΩ resistors
 - 5 0.01µF capacitors
