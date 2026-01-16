@@ -7,13 +7,13 @@ computer](https://eater.net/start).
 
 ```
 .
-├── bin              # executable code
-├── datasheets
-│   ├── 6502
-│   └── clock_module
-├── resources        # links, etc
-├── schematics
-│   ├── 6502
-│   └── clock_module
-└── src              # source code
+├── bin
+├── docs
+│   ├── datasheets
+│   │   ├── 6502
+│   │   └── clock_module
+│   └── schematics
+│       ├── 6502
+│       └── clock_module
+└── src
 ```
