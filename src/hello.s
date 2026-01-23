@@ -52,6 +52,104 @@ reset:
     lda #RS        ; Clear E bits
     sta PORTA
 
+    lda #"e"
+    sta PORTB
+    lda #RS        ; Set RS; Clear RW/E bits
+    sta PORTA
+    lda #(RS | E)
+    sta PORTA
+    lda #RS        ; Clear E bits
+    sta PORTA
+    lda #"l"
+    sta PORTB
+    lda #RS        ; Set RS; Clear RW/E bits
+    sta PORTA
+    lda #(RS | E)
+    sta PORTA
+    lda #RS        ; Clear E bits
+    sta PORTA
+    lda #"l"
+    sta PORTB
+    lda #RS        ; Set RS; Clear RW/E bits
+    sta PORTA
+    lda #(RS | E)
+    sta PORTA
+    lda #RS        ; Clear E bits
+    sta PORTA
+    lda #"o"
+    sta PORTB
+    lda #RS        ; Set RS; Clear RW/E bits
+    sta PORTA
+    lda #(RS | E)
+    sta PORTA
+    lda #RS        ; Clear E bits
+    sta PORTA
+    lda #","
+    sta PORTB
+    lda #RS        ; Set RS; Clear RW/E bits
+    sta PORTA
+    lda #(RS | E)
+    sta PORTA
+    lda #RS        ; Clear E bits
+    sta PORTA
+    lda #" "
+    sta PORTB
+    lda #RS        ; Set RS; Clear RW/E bits
+    sta PORTA
+    lda #(RS | E)
+    sta PORTA
+    lda #RS        ; Clear E bits
+    sta PORTA
+    lda #"w"
+    sta PORTB
+    lda #RS        ; Set RS; Clear RW/E bits
+    sta PORTA
+    lda #(RS | E)
+    sta PORTA
+    lda #RS        ; Clear E bits
+    sta PORTA
+    lda #"o"
+    sta PORTB
+    lda #RS        ; Set RS; Clear RW/E bits
+    sta PORTA
+    lda #(RS | E)
+    sta PORTA
+    lda #RS        ; Clear E bits
+    sta PORTA
+    lda #"r"
+    sta PORTB
+    lda #RS        ; Set RS; Clear RW/E bits
+    sta PORTA
+    lda #(RS | E)
+    sta PORTA
+    lda #RS        ; Clear E bits
+    sta PORTA
+    lda #"l"
+    sta PORTB
+    lda #RS        ; Set RS; Clear RW/E bits
+    sta PORTA
+    lda #(RS | E)
+    sta PORTA
+    lda #RS        ; Clear E bits
+    sta PORTA
+
+    lda #"d"
+    sta PORTB
+    lda #RS        ; Set RS; Clear RW/E bits
+    sta PORTA
+    lda #(RS | E)
+    sta PORTA
+    lda #RS        ; Clear E bits
+    sta PORTA
+
+    lda #"!"
+    sta PORTB
+    lda #RS        ; Set RS; Clear RW/E bits
+    sta PORTA
+    lda #(RS | E)
+    sta PORTA
+    lda #RS        ; Clear E bits
+    sta PORTA
 loop:
     jmp loop
 
