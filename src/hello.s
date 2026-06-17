@@ -30,37 +30,49 @@ reset:
     lda #%00000001 ; Clear display
     jsr lcd_instruction
 
-    lda #"H"
-    jsr print_char
-    lda #"e"
-    jsr print_char
-    lda #"l"
-    jsr print_char
-    lda #"l"
-    jsr print_char
-    lda #"o"
-    jsr print_char
-    lda #","
-    jsr print_char
-    lda #" "
-    jsr print_char
-    lda #"w"
-    jsr print_char
-    lda #"o"
-    jsr print_char
-    lda #"r"
-    jsr print_char
-    lda #"l"
-    jsr print_char
-    lda #"d"
-    jsr print_char
-    lda #"!"
-    jsr print_char
+    ldx #0
+    jmp print_message
 
 loop:
     jmp loop
 
+message: .asciiz "Hello, world!"
+
+print_message:
+    lda message, x
+    beq loop
+    jsr print_char
+    inx
+    jmp print_message
+
+lcd_wait:
+    pha
+    lda #$00 ; set portb to input
+    sta DDRB
+lcdbusy:
+    lda #RW
+    sta PORTA ; put 0x60 on first 8 bits on VIA
+    lda #(RW | E)
+    sta PORTA
+    lda PORTB ; read data bits
+
+    ; given solution
+    ; and #$80
+    ; bne lcdbusy
+
+    ; optimized: N flag = bit 7 after lda
+    bmi lcdbusy
+
+    lda #RW
+    sta PORTA
+    lda #$ff ; set portb to output
+    sta DDRB
+
+    pla
+    rts
+
 lcd_instruction:
+    jsr lcd_wait
     sta PORTB
     lda #0         ; Clear RS/RW/E bits
     sta PORTA
@@ -71,6 +83,7 @@ lcd_instruction:
     rts
 
 print_char:
+    jsr lcd_wait
     sta PORTB
     lda #RS        ; Set RS; Clear RW/E bits
     sta PORTA
