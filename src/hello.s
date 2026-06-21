@@ -36,7 +36,7 @@ reset:
 loop:
     jmp loop
 
-message: .asciiz "Hello, world!"
+message: .asciiz "**Bruce*Holly**"
 
 print_message:
     lda message, x
