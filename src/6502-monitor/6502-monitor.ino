@@ -57,12 +57,14 @@ void onClock()
         dataBits[i] = digitalRead(data[i]) ? 1 : 0;
     rw = digitalRead(RW);
 
-    for (unsigned i = ADDRSIZE; i-- > 0;) {
+    for (unsigned i = ADDRSIZE; i-- > 0;)
+    {
         Serial.print(addrBits[i]);
         address = (address << 1) + addrBits[i];
     }
     Serial.print("\t");
-    for (unsigned i = DATASIZE; i-- > 0;) {
+    for (unsigned i = DATASIZE; i-- > 0;)
+    {
         Serial.print(dataBits[i]);
         val = (val << 1) + dataBits[i];
     }
